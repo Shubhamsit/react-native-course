@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#CAF4FF",
     minHeight: 250,
-    width: 400,
+    width: '90%',
     padding: 7,
     marginVertical: 20,
     borderRadius: 10,
