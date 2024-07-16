@@ -1,7 +1,11 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import React from "react";
+import React,{useContext}from "react";
+import {CartContext} from '../contexts/CartContext'
+
 
 const Card1 = ({ product }) => {
+
+  const { addToCart} = useContext(CartContext);
   const imgurl = product.images[0];
   return (
     <View style={[styles.container]}>
@@ -34,7 +38,13 @@ const Card1 = ({ product }) => {
           {product.rating}☆
         </Text>
 
-        <TouchableOpacity onPress={() => {}} style={styles.btnContainer}>
+        <TouchableOpacity onPress={() => {
+          addToCart(product.price)
+         
+          }
+        } 
+          
+          style={styles.btnContainer}>
           <View>
             <Text style={styles.btnText}>ADD TO CART</Text>
           </View>
